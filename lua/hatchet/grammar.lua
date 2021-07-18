@@ -6,11 +6,11 @@ local grammar = {
 }
 
 local syntax = {
-	'preposition','position','property','object'
+	'preposition','direction','property','object'
 }
 
 local movement_syntax = {
-	'cursor_position','position','property','object'
+   'cursor_position','direction','property','object'
 }
 
 
@@ -21,6 +21,7 @@ local function new_map()
 	return {
 		['preposition'] = { },
 		['order'] = { },
+		['direction'] = { },
 		['property'] = { },
 		['object'] = { },
 	}

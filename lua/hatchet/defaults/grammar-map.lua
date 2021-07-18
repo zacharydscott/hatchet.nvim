@@ -9,7 +9,7 @@ return {
 		a = 'around',
 		precedence = 1
 	},
-	position = {
+	direction = {
 		n = 'next',
 		l = 'previous',
 		precedence = 2

@@ -34,11 +34,16 @@ return {
 			(switch_statement
 				(parenthesized_expression) @expression
 				(switch_body
-					(switch_case
+					[(switch_case
 						. (_) @value
 						. (_)? @case_logic_start
 						 (_)? @case_logic_end .
-					)? @case
+					)
+					(switch_default
+						. (_)? @case_logic_start
+						 (_)? @case_logic_end .
+					 )
+					]? @case
 				) @body
 			) @root
 		]],
@@ -46,6 +51,7 @@ return {
 		default_preposition = 'around',
 		properties = {
 			body = b,
+			expression = b,
 			case = {
 				prepositions = {
 					['in'] = {target = 'case_logic', offset_fn = off_word},
